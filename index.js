@@ -214,8 +214,7 @@ document.addEventListener('keydown', function() {
 
             perfect = [];
             correct = [];
-
-            guess = '';
+          
             if (playerRow == 5 && guess != answer){
                 answerBox.style.display = 'block';
                 answerBox.style.animation = 'showAnswer 0.3s ease-in';
@@ -224,6 +223,7 @@ document.addEventListener('keydown', function() {
             }
             playerRow = playerRow == 5 ? 5 : playerRow + 1;
             count = 0;
+            guess = '';
 
 
         } else {
