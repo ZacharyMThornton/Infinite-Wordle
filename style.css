@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.barlow-regular {
+    font-family: "Barlow", serif;
+    font-weight: 400;
+    font-style: normal;
+}  
+
+.barlow-bold {
+    font-family: "Barlow", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100vw;
+    height:100vh;
+    background-color: black;
+    color:white;
+    font-family: "Barlow", serif;
+    font-weight: 400;
+}
+
+#answer{
+    display: none; /* will change to block when shown */
+    position: absolute;
+    top: 30px;
+    z-index: 1;
+    padding: 5px;
+    width: fit-content;
+    height: fit-content;
+    /*animation: showAnswer 0.3s ease-in; -> when animation is triggered*/
+    box-shadow: black 0 0 20px;
+    background-color: white;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+}
+
+#text-board {
+    /* background-color: blue; */
+    height:60vh;
+    width: max-content;
+    display:grid;
+    grid-template-rows: auto auto auto auto auto auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* background-color: green; */
+    width:100%;
+    height:fit-content;
+
+}
+
+.item {
+    text-align: center;
+    font-size: 40px;
+    width:60px;
+    height:60px;
+    margin:3px;
+    border:1px solid white;
+    border-radius: 3px;
+}
+
+#keyboard {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    width:80vw;
+    height:fit-content;
+    padding:10px;
+}
+
+#keyboard > div {
+    display:flex;
+    justify-content: center;
+    min-height: 50px;
+
+    width: 100%;
+    height: 10vh;
+
+    flex-direction:row;
+}
+
+#keyboard > div > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 1%;
+    height:5vw;
+    width: 5vw;
+    max-height: 40px;
+    max-width: 40px;
+    border: 1px solid white;
+    border-radius: 3px;
+    background-color: grey;
+    text-transform: uppercase;
+}
+
+@keyframes wrongGuess {
+    0% { background-color: black }
+
+    50% { background-color: red }
+
+    100% { background-color: black; }
+}
+
+@keyframes showAnswer{
+ 0% { 
+    display: block;
+    top: 0px;
+    background-color: rgba(255,255,255, 0.2);
+ }
+ 50% { 
+    background-color: rgba(255,255,255, 0.6);
+ }
+ 100% { 
+    top: 30px;
+    background-color: rgba(255,255,255, 1);
+ }
+}
